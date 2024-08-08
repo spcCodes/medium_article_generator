@@ -1,0 +1,13 @@
+#env name : medium
+
+langchain
+langchain-openai
+langchain-community
+langchainhub
+sentence_transformers
+chromadb
+python-dotenv
+streamlit
+faster-whisper
+pyaudio
+pydub
