@@ -2,8 +2,9 @@ import pyaudio
 import wave
 from pydub import AudioSegment
 import os
+from datetime import datetime
 
-def record_audio(output_filename="output.mp3", record_seconds=10):
+def record_audio():
     # Set up parameters
     format = pyaudio.paInt16  # Audio format
     channels = 1  # Mono audio
@@ -46,6 +47,10 @@ def record_audio(output_filename="output.mp3", record_seconds=10):
     # Create the demo directory if it doesn't exist
     demo_folder = os.path.join(os.getcwd(), "audio")
     os.makedirs(demo_folder, exist_ok=True)
+    
+    # Generate the current date and time for the filename
+    current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+    output_filename = f"output_{current_time}.mp3"
 
     # Path to save the MP3 file
     mp3_output_path = os.path.join(demo_folder, output_filename)
